@@ -1,0 +1,13 @@
+version: '3'
+services:
+  bareos-bat:
+    #build: . 
+    image: apsl/bareos-bat
+    container_name: bareos-bat
+    environment:
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /etc/bareos:/etc/bareos
+    network_mode: host 
